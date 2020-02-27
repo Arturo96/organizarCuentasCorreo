@@ -11,8 +11,8 @@ public class CuentaCorreo {
     }
 
     public CuentaCorreo(String nombre, String dominio) {
-        this.nombre = nombre;
-        this.dominio = dominio;
+        this.nombre = nombre.toLowerCase();
+        this.dominio = dominio.toLowerCase();
     }
 
     public String getDominio() {
