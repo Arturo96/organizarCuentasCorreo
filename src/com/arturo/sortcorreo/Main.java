@@ -46,6 +46,7 @@ public class Main {
                 cuentas.forEach(cuenta -> salida.println(cuenta));
             }
 
+            System.out.println("Archivo generado correctamente.");
         } catch (IOException ex) {
             ex.printStackTrace(System.out);
         }

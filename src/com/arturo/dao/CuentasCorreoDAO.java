@@ -15,16 +15,15 @@ public class CuentasCorreoDAO {
     public static List<CuentaCorreo> organizarCuentas(List<CuentaCorreo> cuentas) {
         
         cuentas.sort(Comparator.comparing(CuentaCorreo::getDominio));
-
         String dominioActual = cuentas.get(0).getDominio();
         for (CuentaCorreo cuenta : cuentas) {
             if (cuenta.getDominio().equals(dominioActual)) {
-                cuentasPorDominio.add(cuenta);
+                if (!cuentasPorDominio.contains(cuenta)) cuentasPorDominio.add(cuenta);
             } else {
                 dominioActual = cuenta.getDominio();
                 agregarCuentasOrdenadas();
 
-                cuentasPorDominio.add(cuenta);
+                if (!cuentasPorDominio.contains(cuenta)) cuentasPorDominio.add(cuenta);
 
             }
         }
